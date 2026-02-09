@@ -1,0 +1,93 @@
+
+.primaryColor {
+    color: #151F48 !important;
+}
+
+.cashier-header{
+    background-color: white !important;
+}
+.nav-item a{
+        color: #151F48 !important;
+        font-family: 'Cairo' !important;
+}
+
+
+.home-background{
+    background-color: #151F48;;
+}
+
+.contact-us label{
+    text-align: start;
+    width: 100%;
+}
+.contact-us-info{
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+    display: flex;
+    > div {
+        margin: auto;
+    }
+    > div > h3 {
+        color: white;
+    }
+
+}
+
+.btn-blue {
+    border-radius: 25px !important;
+}
+.contact-us-form{
+    background-color: #f2f2f2;
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
+}
+
+
+.cps-icon-box {
+    display: inline-block;
+    background: #FFF;
+    padding: 15px;
+    float: right;
+}
+
+.feature-icon{
+    width: 60px !important;
+}
+.card{
+    margin: 5px;
+    width: 100%;
+    min-height: 10.6em;
+}
+.nav-item span{
+    /*display: none;*/
+    text-align: start;
+}
+
+/*  =========== Loader CSS  ===========*/
+#loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.loader-spinner {
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #3498db;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+/* =========== end Loader Style  ===========*/

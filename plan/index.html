@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تسجيل الأعمال - SaaS Platform</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="form-wrapper">
+            <!-- Header -->
+            <div class="form-header">
+                <h1>تسجيل حساب جديد</h1>
+                <p>انضم إلى منصتنا وابدأ رحلتك في إدارة أعمالك بكفاءة</p>
+            </div>
+
+            <!-- Progress Bar -->
+            <div class="progress-container">
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+                <div class="progress-steps">
+                    <div class="step active" data-step="1">
+                        <div class="step-number">1</div>
+                        <div class="step-label">المعلومات الشخصية</div>
+                    </div>
+                    <div class="step" data-step="2">
+                        <div class="step-number">2</div>
+                        <div class="step-label">معلومات النشاط</div>
+                    </div>
+                    <div class="step" data-step="3">
+                        <div class="step-number">3</div>
+                        <div class="step-label">الحساب والدفع</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Form Container -->
+            <div class="form-container">
+                <form id="registrationForm">
+                    <!-- Step 1: Personal Information -->
+                    <div class="form-step active" id="step1">
+                        <div class="step-header">
+                            <i class="fas fa-user"></i>
+                            <h2>المعلومات الشخصية</h2>
+                            <p>أدخل معلوماتك الشخصية الأساسية</p>
+                        </div>
+
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="firstName">الاسم الأول <span class="required">*</span></label>
+                                <input type="text" id="firstName" name="firstName" required>
+                                <div class="error-message" id="firstNameError"></div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="lastName">الاسم الأخير <span class="required">*</span></label>
+                                <input type="text" id="lastName" name="lastName" required>
+                                <div class="error-message" id="lastNameError"></div>
+                            </div>
+
+                            <div class="form-group full-width">
+                                <label for="email">البريد الإلكتروني <span class="required">*</span></label>
+                                <input type="email" id="email" name="email" required>
+                                <div class="error-message" id="emailError"></div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="phone">رقم الهاتف <span class="required">*</span></label>
+                                <input type="tel" id="phone" name="phone" required>
+                                <div class="error-message" id="phoneError"></div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="country">الدولة <span class="required">*</span></label>
+                                <select id="country" name="country" required>
+                                    <option value="">اختر الدولة</option>
+                                    <option value="egypt">مصر</option>
+                                    <option value="saudi">السعودية</option>
+                                    <option value="uae">الإمارات</option>
+                                    <option value="kuwait">الكويت</option>
+                                    <option value="qatar">قطر</option>
+                                    <option value="bahrain">البحرين</option>
+                                    <option value="oman">عمان</option>
+                                    <option value="jordan">الأردن</option>
+                                    <option value="lebanon">لبنان</option>
+                                    <option value="morocco">المغرب</option>
+                                    <option value="tunisia">تونس</option>
+                                    <option value="algeria">الجزائر</option>
+                                </select>
+                                <div class="error-message" id="countryError"></div>
+                            </div>
+
+                            <div class="form-group full-width">
+                                <label for="address">العنوان</label>
+                                <textarea id="address" name="address" rows="3" placeholder="أدخل عنوانك الكامل"></textarea>
+                            </div>
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="button" class="btn btn-primary" onclick="nextStep(1)">
+                                التالي <i class="fas fa-arrow-left"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Step 2: Business Information -->
+                    <div class="form-step" id="step2">
+                        <div class="step-header">
+                            <i class="fas fa-building"></i>
+                            <h2>معلومات النشاط التجاري</h2>
+                            <p>أدخل تفاصيل نشاطك التجاري</p>
+                        </div>
+
+                        <div class="form-grid">
+                            <div class="form-group full-width">
+                                <label for="businessName">اسم النشاط التجاري <span class="required">*</span></label>
+                                <input type="text" id="businessName" name="businessName" required>
+                                <div class="error-message" id="businessNameError"></div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="businessType">نوع النشاط <span class="required">*</span></label>
+                                <select id="businessType" name="businessType" required>
+                                    <option value="">اختر نوع النشاط</option>
+                                    <option value="restaurant">مطاعم وكافيهات</option>
+                                    <option value="retail">متاجر</option>
+                                    <option value="pharmacy">صيدليات</option>
+                                    <option value="services">خدمات أخرى</option>
+                                    <option value="ecommerce">تجارة إلكترونية</option>
+                                    <option value="healthcare">رعاية صحية</option>
+                                    <option value="education">تعليم</option>
+                                    <option value="technology">تكنولوجيا</option>
+                                </select>
+                                <div class="error-message" id="businessTypeError"></div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="businessSize">حجم النشاط <span class="required">*</span></label>
+                                <select id="businessSize" name="businessSize" required>
+                                    <option value="">اختر حجم النشاط</option>
+                                    <option value="small">صغير (1-10 موظفين)</option>
+                                    <option value="medium">متوسط (11-50 موظف)</option>
+                                    <option value="large">كبير (51-200 موظف)</option>
+                                    <option value="enterprise">مؤسسة (أكثر من 200 موظف)</option>
+                                </select>
+                                <div class="error-message" id="businessSizeError"></div>
+                            </div>
+
+                            <div class="form-group full-width">
+                                <label for="subdomain">اسم النطاق الفرعي <span class="required">*</span></label>
+                                <div class="input-group">
+                                    <input type="text" id="subdomain" name="subdomain" required placeholder="myrestaurant">
+                                    <span class="input-suffix">.cashierthru.com</span>
+                                </div>
+                                <div class="help-text">سيكون هذا هو رابط موقعك الإلكتروني</div>
+                                <div class="error-message" id="subdomainError"></div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="branches">عدد الفروع</label>
+                                <input type="number" id="branches" name="branches" min="1" value="1">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="expectedRevenue">الإيرادات المتوقعة شهرياً</label>
+                                <select id="expectedRevenue" name="expectedRevenue">
+                                    <option value="">اختر النطاق</option>
+                                    <option value="under-10k">أقل من 10,000</option>
+                                    <option value="10k-50k">10,000 - 50,000</option>
+                                    <option value="50k-100k">50,000 - 100,000</option>
+                                    <option value="100k-500k">100,000 - 500,000</option>
+                                    <option value="over-500k">أكثر من 500,000</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group full-width">
+                                <label for="businessDescription">وصف النشاط التجاري</label>
+                                <textarea id="businessDescription" name="businessDescription" rows="4" placeholder="اكتب وصفاً مختصراً عن نشاطك التجاري"></textarea>
+                            </div>
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="button" class="btn btn-secondary" onclick="prevStep(2)">
+                                <i class="fas fa-arrow-right"></i> السابق
+                            </button>
+                            <button type="button" class="btn btn-primary" onclick="nextStep(2)">
+                                التالي <i class="fas fa-arrow-left"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Step 3: Account & Payment -->
+                    <div class="form-step" id="step3">
+                        <div class="step-header">
+                            <i class="fas fa-credit-card"></i>
+                            <h2>معلومات الحساب والدفع</h2>
+                            <p>أنشئ حسابك واختر خطة الاشتراك</p>
+                        </div>
+
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="password">كلمة المرور <span class="required">*</span></label>
+                                <div class="password-input">
+                                    <input type="password" id="password" name="password" required minlength="8">
+                                    <button type="button" class="password-toggle" onclick="togglePassword('password')">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                </div>
+                                <div class="password-strength" id="passwordStrength"></div>
+                                <div class="error-message" id="passwordError"></div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="confirmPassword">تأكيد كلمة المرور <span class="required">*</span></label>
+                                <div class="password-input">
+                                    <input type="password" id="confirmPassword" name="confirmPassword" required>
+                                    <button type="button" class="password-toggle" onclick="togglePassword('confirmPassword')">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                </div>
+                                <div class="error-message" id="confirmPasswordError"></div>
+                            </div>
+                        </div>
+
+                        <!-- Pricing Plans -->
+                        <div class="pricing-section">
+                            <h3>اختر خطة الاشتراك</h3>
+                            <div class="pricing-grid" id="pricingPlans">
+                                <!-- Plans will be loaded dynamically -->
+                            </div>
+                        </div>
+
+                        <!-- Terms and Conditions -->
+                        <div class="terms-section">
+                            <label class="checkbox-container">
+                                <input type="checkbox" id="agreeTerms" name="agreeTerms" required>
+                                <span class="checkmark"></span>
+                                أوافق على <a href="#" target="_blank">الشروط والأحكام</a> و <a href="#" target="_blank">سياسة الخصوصية</a>
+                            </label>
+                            <div class="error-message" id="agreeTermsError"></div>
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="button" class="btn btn-secondary" onclick="prevStep(3)">
+                                <i class="fas fa-arrow-right"></i> السابق
+                            </button>
+                            <button type="submit" class="btn btn-success" id="submitBtn">
+                                <i class="fas fa-check"></i> إنشاء الحساب والدفع
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Loading Overlay -->
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="loading-spinner">
+            <i class="fas fa-spinner fa-spin"></i>
+            <p>جاري معالجة طلبك...</p>
+        </div>
+    </div>
+
+    <!-- Success Modal -->
+    <div class="modal" id="successModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <i class="fas fa-check-circle"></i>
+                <h3>تم إنشاء الحساب بنجاح!</h3>
+            </div>
+            <div class="modal-body">
+                <p>تم إنشاء حسابك بنجاح. ستتلقى رسالة تأكيد على بريدك الإلكتروني قريباً.</p>
+                <div class="account-details">
+                    <p><strong>اسم المستخدم:</strong> <span id="displayEmail"></span></p>
+                    <p><strong>رابط موقعك:</strong> <span id="displaySubdomain"></span></p>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" onclick="closeModal()">
+                    الانتقال إلى لوحة التحكم
+                </button>
+            </div>
+        </div>
+    </div>
+<div class="container cashier-header">
+    <a href="https://wa.me/+201507308783" target="_blank">
+        <img id="whatsapp"
+             src="whatsapp.webp"
+             alt="Contact Us on WhatsApp"
+             width="48"
+             height="48"
+             loading="lazy"
+             decoding="async"
+             style="margin: 7px; bottom: 0; left: 0; position: fixed;"/>
+    </a>
+</div>
+    <script src="js/validation.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
+

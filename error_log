@@ -1,0 +1,4 @@
+[24-Jul-2025 07:09:00 UTC] PHP Warning:  file_get_contents(http://https://cashierthru.com/proxy.php): Failed to open stream: HTTP request failed! HTTP/1.1 403 Forbidden
+ in /home/cashierthruosama/public_html/process_payment.php on line 14
+[24-Jul-2025 07:09:13 UTC] PHP Warning:  file_get_contents(http://https://cashierthru.com/proxy.php): Failed to open stream: HTTP request failed! HTTP/1.1 403 Forbidden
+ in /home/cashierthruosama/public_html/process_payment.php on line 14
